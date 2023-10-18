@@ -1,0 +1,210 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "usermeta": {
+    "deneb": {
+      "build": "1.5.1.0",
+      "metaVersion": 1,
+      "provider": "vegaLite",
+      "providerVersion": "5.6.1"
+    },
+    "interactivity": {
+      "tooltip": true,
+      "contextMenu": true,
+      "selection": true,
+      "highlight": true,
+      "dataPointLimit": 250
+    },
+    "information": {
+      "name": "Deneb-Template---Histogram-with-Verts",
+      "description": "[No Description Provided]",
+      "author": "Jack Bryde",
+      "uuid": "5a6bbd60-6f4d-4a46-9850-d69440b0ed6a",
+      "generated": "2023-08-30T05:53:48.162Z"
+    },
+    "dataset": [
+      {
+        "key": "__0__",
+        "name": "Member_name",
+        "description": "Group member name (for which metric is calculated)",
+        "type": "text",
+        "kind": "column"
+      },
+      {
+        "key": "__1__",
+        "name": "Metric",
+        "description": "",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__2__",
+        "name": "Deneb_vert",
+        "description": "Where to place vertical line",
+        "type": "numeric",
+        "kind": "measure"
+      },
+      {
+        "key": "__3__",
+        "name": "Deneb_vert_label",
+        "description": "",
+        "type": "text",
+        "kind": "measure"
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "font": "Segoe UI",
+    "arc": {},
+    "area": {
+      "line": true,
+      "opacity": 0.6
+    },
+    "bar": {},
+    "line": {
+      "strokeWidth": 3,
+      "strokeCap": "round",
+      "strokeJoin": "round"
+    },
+    "path": {},
+    "point": {
+      "filled": true,
+      "size": 75
+    },
+    "rect": {},
+    "shape": {},
+    "symbol": {
+      "strokeWidth": 1.5,
+      "size": 50
+    },
+    "text": {
+      "font": "Segoe UI",
+      "fontSize": 12,
+      "fill": "#605E5C"
+    },
+    "axis": {
+      "ticks": false,
+      "grid": false,
+      "domain": false,
+      "labelColor": "#605E5C",
+      "labelFontSize": 12,
+      "titleFont": "wf_standard-font, helvetica, arial, sans-serif",
+      "titleColor": "#252423",
+      "titleFontSize": 16,
+      "titleFontWeight": "normal"
+    },
+    "axisQuantitative": {
+      "tickCount": 3,
+      "grid": true,
+      "gridColor": "#C8C6C4",
+      "gridDash": [1, 5],
+      "labelFlush": false
+    },
+    "axisX": {"labelPadding": 5},
+    "axisY": {"labelPadding": 10},
+    "header": {
+      "titleFont": "wf_standard-font, helvetica, arial, sans-serif",
+      "titleFontSize": 16,
+      "titleColor": "#252423",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C"
+    },
+    "legend": {
+      "titleFont": "Segoe UI",
+      "titleFontWeight": "bold",
+      "titleColor": "#605E5C",
+      "labelFont": "Segoe UI",
+      "labelFontSize": 13.333333333333332,
+      "labelColor": "#605E5C",
+      "symbolType": "circle",
+      "symbolSize": 75
+    }
+  },
+  "data": {"name": "dataset"},
+  "title": "Distribution of 'Number of incidents' by Local Government Area",
+  "layer": [
+    {
+      "transform": [
+        {
+          "bin": {"step": 500},
+          "field": "__1__",
+          "as": "Binned_Incidents"
+        }
+      ],
+      "mark": {
+        "type": "bar",
+        "cornerRadius": 2,
+        "tooltip": true
+      },
+      "encoding": {
+        "x": {
+          "field": "Binned_Incidents",
+          "title": "Number of incidents (binned)",
+          "axis": {
+            "labels": true,
+            "format": ","
+          }
+        },
+        "y": {
+          "aggregate": "count",
+          "title": "Frequency"
+        },
+        "color": {"value": "#EEDD88"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "bin": {"step": 500},
+          "field": "__2__",
+          "as": "Binned_vert"
+        },
+        {
+          "filter": {
+            "field": "Binned_vert",
+            "valid": true
+          }
+        }
+      ],
+      "mark": {"type": "rule"},
+      "encoding": {
+        "x": {"field": "Binned_vert"},
+        "color": {"value": "#143054"},
+        "size": {"value": 4}
+      }
+    },
+    {
+      "transform": [
+        {
+          "bin": {"step": 500},
+          "field": "__2__",
+          "as": "Binned_vert"
+        },
+        {
+          "filter": {
+            "field": "Binned_vert",
+            "valid": true
+          }
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "xOffset": 10,
+        "angle": 90,
+        "fontWeight": 900,
+        "font": "monospace",
+        "fontSize": 15
+      },
+      "encoding": {
+        "text": {
+          "field": "__3__",
+          "type": "nominal"
+        },
+        "x": {"field": "Binned_vert"},
+        "color": {"value": "#143054"},
+        "size": {"value": 10}
+      }
+    }
+  ]
+}
