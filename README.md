@@ -5,7 +5,7 @@ Written in Vega or Vega-Lite, for use with the [Deneb](https://deneb-viz.github.
 ## Choropleth QFES Regions
 Map visual written in Vega-Lite. Geographic boundaries are hard-coded, to support usage by the Microsoft Certified version of Deneb available via AppSource. 
 
-![image](https://private-user-images.githubusercontent.com/106286328/269844719-6c41569f-4d88-40a9-ac0b-11c95f0cd6bb.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTUzNjMxOTMsIm5iZiI6MTY5NTM2Mjg5MywicGF0aCI6Ii8xMDYyODYzMjgvMjY5ODQ0NzE5LTZjNDE1NjlmLTRkODgtNDBhOS1hYzBiLTExYzk1ZjBjZDZiYi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwOTIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDkyMlQwNjA4MTNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03N2Q2ZDc2NTY4YzBkMzUzY2MzMzBmOWY2MDI3NDMzOWNlMDVlMDYxOGIwM2U3MjRmNDgzMTUzNjExN2EwMWQwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.i8Pwrrh_DxB17ZIlqOkFJJVUDuOy9FZwZ6jcEy9DU8Y)
+![image](https://user-images.githubusercontent.com/106286328/276435501-5242a592-1b42-4ad2-a092-5d021cf4a9d3.png)
 
 #### Usage
 Regions are highlighted by some measure defined in Power BI. The simplest implementation of this is to create a table in Power BI, via DAX or Power Query, with a single row for each Region, and a column of data to be presented. If one is familiar with Vega-Lite, the code can be easily adjusted to support additional data layers (eg, labels), colours & formatting, or to change the spacial join field (Region Name, Region Number, and Firecom Name are currently supported). 
