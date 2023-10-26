@@ -1,0 +1,91 @@
+{
+  "data": {
+    "name": "dataset"
+  },
+  "transform": [
+    {"calculate": "toDate(utcFormat(now(), '%Y-%m-%d'))", "as": "currentDate"}
+  ],
+  "title": {
+    "text": "Analytics - Active Data Requests",
+    "fontSize": 14,
+    "anchor": "start",
+    "dy": 0,
+    "color": "#0D1F2B"
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "field": "Id", 
+          "type": "nominal", 
+          "sort": "descending",
+          "axis": {
+            "domain": true,
+            "grid": false,
+            "ticks": false,
+            "labels": true,
+            "labelFontSize": 11,
+            "labelPadding": 6,
+            "title": "Request Id",
+            "titleFontSize": 14,
+            "titleColor": "#0D1F2B"
+          }
+        },
+        "x": { 
+          "field": "DateCreated", 
+          "type": "temporal", 
+          "timeUnit": "yearmonthdate",
+          "axis": {
+            "format": "%d-%b",
+            "domain": true,
+            "grid": false,
+            "ticks": true,
+            "labels": true,
+            "labelFontSize": 11,
+            "labelPadding": 6,
+            "title": null
+          }
+        },
+        "x2": {
+          "field": "DateDue"
+        },
+        "color": {
+          "title": null,
+          "field": "StatusName",
+          "type": "nominal",
+          "legend": {
+            "padding": 0,
+            "labelFontSize": 11,
+            "labelColor": "#706D6C",
+            "rowPadding": 8,
+            "symbolOpacity": 0.9,
+            "symbolType": "square"
+          }
+        },
+        "tooltip": [
+          {"field": "Id", "type": "nominal", "title": "Request Id"},
+          {"field": "Subject", "type": "nominal", "title": "Subject"},
+          {"field": "AttendantName", "type": "nominal", "title": "Assigned to"},
+          {"field": "AreaName", "type": "nominal", "title": "Requested by"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "rule", 
+        "strokeDash": [2, 2], 
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "currentDate",
+          "type": "temporal",
+          "axis": {
+            "format": "%Y-%m-%d"
+          }
+        }
+      }
+    }
+  ]
+}
