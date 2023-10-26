@@ -2,6 +2,8 @@
 Vega-Lite Power BI visual templates for use in Deneb
 Written in Vega or Vega-Lite, for use with the [Deneb](https://deneb-viz.github.io/) custom visual in Power BI.
 
+All of these have taken inspiration from the excellent work by David Bacci, who has many examples (in Vega) on GitHub (here)[https://github.com/PBI-David/Deneb-Showcase]. He is also quite supportive on Stack Exchange. 
+
 ## Choropleth QFES Regions
 Map visual written in Vega-Lite. Geographic boundaries are hard-coded, to support usage by the Microsoft Certified version of Deneb available via AppSource. 
 
@@ -70,3 +72,16 @@ FIRSTNONBLANK(
     & ")"
 
 ```
+## Simple Gantt Chart
+A horizontal bar chart to show ranged temporal data in Vega-Lite. This does not include dependencies or milestones etc that is often utilised by such visuals, relying on tooltips to display additional information instead. A dotted black line is included to show the current date.
+
+![plot](https://user-images.githubusercontent.com/106286328/278492949-2ddf7eb1-1fa0-47e5-aaaa-e8ee00c7a29f.png)
+
+Slightly modified from an example posted by David Bacci on Stack Exchange (here)[https://stackoverflow.com/questions/75833067/gantt-chart-example-using-vega-lite]. Only the deneb specification has been uploaded, as I've begun to find that easier to use than a template file.
+
+Input variables:
+- Task/project ID (text)
+- Start date
+- End date
+- Status (for legend & bar colour)
+- Ohter variables for tooltip display
