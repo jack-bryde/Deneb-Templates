@@ -1,6 +1,5 @@
 # Deneb-Templates
-Vega-Lite Power BI visual templates for use in Deneb
-Written in Vega or Vega-Lite, for use with the [Deneb](https://deneb-viz.github.io/) custom visual in Power BI.
+Vega-Lite Power BI visual templates for use in Deneb. Written in Vega or Vega-Lite for use with the [Deneb](https://deneb-viz.github.io/) custom visual in Power BI.
 
 All of these have taken inspiration from the excellent work by David Bacci, who has many examples (in Vega) on GitHub [here](https://github.com/PBI-David/Deneb-Showcase). He is also quite supportive on Stack Exchange. 
 
