@@ -3,6 +3,8 @@ Vega-Lite Power BI visual templates for use with the [Deneb](https://deneb-viz.g
 
 All of these have taken inspiration from the excellent work by David Bacci, who has many examples (in Vega) on GitHub [here](https://github.com/PBI-David/Deneb-Showcase). He is also quite supportive on Stack Exchange. 
 
+All data presented here is publically available via the [Queensland Government Open Data Portal](https://www.data.qld.gov.au/), or otherwise randomised, fabricated and obscured.
+
 ## Choropleth QFES Regions
 Map visual written in Vega-Lite. Geographic boundaries are hard-coded, to support usage by the Microsoft Certified version of Deneb available via AppSource. 
 
